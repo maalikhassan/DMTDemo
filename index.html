@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Transfer Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- User Registration Form -->
+        <div id="registrationForm" class="form-container active">
+            <h1>Welcome to Vehicle Transfer Service</h1>
+            <p class="subtitle">Please provide your details to begin</p>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleNumber">Vehicle Number</label>
+                    <input type="text" id="vehicleNumber" required placeholder="e.g., ABC-1234">
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="tel" id="mobileNumber" required placeholder="e.g., +1234567890">
+                </div>
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </form>
+        </div>
+
+        <!-- Service Selection -->
+        <div id="serviceSelection" class="form-container">
+            <h1>Select Service Type</h1>
+            <p class="subtitle">Choose the service you need</p>
+            <div class="service-options">
+                <button class="service-btn" data-service="car-transfer">
+                    <span class="icon">🚗</span>
+                    <span>Car Transfer</span>
+                </button>
+                <button class="service-btn" data-service="motorcycle-transfer">
+                    <span class="icon">🏍️</span>
+                    <span>Motorcycle Transfer</span>
+                </button>
+                <button class="service-btn" data-service="vehicle-transfer">
+                    <span class="icon">🚙</span>
+                    <span>General Vehicle Transfer</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Document Checklist -->
+        <div id="documentChecklist" class="form-container">
+            <h1>Required Documents</h1>
+            <p class="subtitle">Please ensure you have all the following documents before proceeding</p>
+            <div class="user-info" style="margin-bottom: 20px;">
+                <p><strong>Service:</strong> <span id="displayServiceChecklist"></span></p>
+            </div>
+            <div class="checklist">
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>Original Vehicle Registration Certificate (Revenue License Book)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>Transfer deed duly signed by both parties</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>National Identity Card (NIC) of both seller and buyer</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>Insurance Certificate (valid)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>Emission Test Certificate (if applicable)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" class="doc-checkbox" required>
+                    <span>Payment receipt for transfer fee</span>
+                </label>
+            </div>
+            <div class="checklist-warning" id="checklistWarning">
+                <p>⚠️ Please check all items to proceed</p>
+            </div>
+            <button id="proceedBtn" class="btn btn-primary" disabled>Proceed to Service</button>
+        </div>
+
+        <!-- Process Steps -->
+        <div id="processSteps" class="form-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-info">
+                <h2 id="stepTitle">Step 1</h2>
+                <p id="stepDescription">Go to counter for document check</p>
+                <div id="stepGuidance" class="step-guidance">
+                    <h3>What to do:</h3>
+                    <ul id="guidanceList"></ul>
+                </div>
+            </div>
+            <div class="user-info">
+                <p><strong>Name:</strong> <span id="displayName"></span></p>
+                <p><strong>Vehicle:</strong> <span id="displayVehicle"></span></p>
+                <p><strong>Service:</strong> <span id="displayService"></span></p>
+            </div>
+            <div id="buttonMessage" class="button-message">⏳ Please complete this step first</div>
+            <button id="nextStepBtn" class="btn btn-primary">Complete This Step</button>
+        </div>
+
+        <!-- Completion Screen -->
+        <div id="completionScreen" class="form-container">
+            <div class="completion-icon">✅</div>
+            <h1>Process Complete!</h1>
+            <p class="subtitle">Thank you for using our service</p>
+            <div class="summary">
+                <h3>Time Summary</h3>
+                <div id="timeSummary"></div>
+                <div class="total-time">
+                    <strong>Total Time:</strong> <span id="totalTime"></span>
+                </div>
+            </div>
+            <div class="data-saved-notice">
+                <p>✓ Thank you! Your response has been recorded for our research</p>
+            </div>
+            <button class="btn btn-secondary" onclick="location.reload()">Start New Process</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
