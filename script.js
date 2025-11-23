@@ -370,7 +370,7 @@ async function saveToSpreadsheet() {
     try {
         // Send data to Google Sheets via Google Apps Script Web App
         // PASTE YOUR WEB APP URL HERE (the one you get after deploying with "Anyone" access)
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwTJBJBH3dqnRQ0VM1KYnNeT6uTMP-dml8xD0_7qobNSVTctVEjgBYLfKvkaYaJ3LcK/exec', {
+        const response = await fetch('https://script.google.com/macros/s/AKfycby0QCMmTviNRNjd9U6EuKy76Ma1GO_xP0-yr3oIbvFME2aLPpKXKLLeTU6ZN8Vlf_YZ/exec', {
             method: 'POST',
             mode: 'no-cors',
             headers: {
